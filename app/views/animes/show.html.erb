@@ -1,0 +1,10 @@
+<a href="/animes">Animes Index</a>
+
+<h1><%= @anime.name %></h1>
+
+<p><%= @anime.streamable %> </p>
+<p><%= @anime.season_count %> </p>
+<p><%= @anime.total_episodes %> </p>
+<p><%= @anime.rank %> </p>
+
+<a href="/animes/<%= @anime.id %>/edit">Edit</a>

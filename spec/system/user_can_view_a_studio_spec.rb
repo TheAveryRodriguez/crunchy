@@ -11,8 +11,6 @@ RSpec.feature "Viewing Studios", type: :feature do
 
     visit "/studios/#{madhouse.id}"
 
-    save_and_open_page
-
     expect(page).to have_content "Madhouse"
     expect(page).to have_content "true"
     expect(page).to have_content "15"
