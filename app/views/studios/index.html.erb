@@ -1,0 +1,12 @@
+<h1>All Studios</h1>
+
+<% @studios.each do |studio| %>
+  <h3><a href="/studios/<%= studio.id %>"><%= studio.name %></a></h3>
+
+  <a href="/studios/<%= studio.id  %>/edit">Edit</a>
+  <form action="/studios/<%= studio.id %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="delete"/>
+  </form>
+<% end %>
