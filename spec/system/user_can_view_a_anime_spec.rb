@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.feature "Viewing Animes", type: :feature do
-  scenario "I can see each anime in the system" do
+  scenario "I can see an anime in the system" do
     madhouse = Studio.create(
       name: "Madhouse",
       japanese: true,
@@ -25,18 +25,14 @@ RSpec.feature "Viewing Animes", type: :feature do
       rank: 127
     )
 
-    visit "/animes"
+    visit "/animes/#{death_note.id}"
+
+    save_and_open_page
 
     expect(page).to have_content death_note.name
     expect(page).to have_content death_note.streamable
     expect(page).to have_content death_note.season_count
     expect(page).to have_content death_note.total_episodes
     expect(page).to have_content death_note.rank
-
-    expect(page).to have_content onepunch_man.name
-    expect(page).to have_content onepunch_man.streamable
-    expect(page).to have_content onepunch_man.season_count
-    expect(page).to have_content onepunch_man.total_episodes
-    expect(page).to have_content onepunch_man.rank
   end
 end

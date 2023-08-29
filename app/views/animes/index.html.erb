@@ -1,0 +1,17 @@
+<h1>All Animes</h1>
+
+<% @animes.each do |anime| %>
+  <h3><a href="/animes/<%= anime.id %>"><%= anime.name %></a></h3>
+
+  <p><%= anime.streamable %></p>
+  <p><%= anime.season_count %></p>
+  <p><%= anime.total_episodes %></p>
+  <p><%= anime.rank %></p>
+
+  <a href="/animes/<%= anime.id  %>/edit">Edit</a>
+  <form action="/animes/<%= anime.id %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="delete"/>
+  </form>
+<% end %>

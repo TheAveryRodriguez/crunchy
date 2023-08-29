@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get "/studios", to: "studios#index"
   get "/studios/:id", to: "studios#show"
   get "/animes", to: "animes#index"
+  get "/animes/:id", to: "animes#show"
 end
