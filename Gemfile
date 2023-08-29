@@ -69,4 +69,7 @@ end
 
 group :test do
   gem "capybara"
+  gem "launchy"
 end
+
+gem "pry-rails", "~> 0.3.9"
